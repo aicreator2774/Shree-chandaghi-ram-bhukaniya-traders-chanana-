@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Chandaghi Ram Bhukaniya Traders</title>
+    <style>
+        /* ===========================
+           GLOBAL STYLES
+        =========================== */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,Helvetica,sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+            color:#222;
+            line-height:1.6;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        img{
+            max-width:100%;
+        }
+
+        /* ===========================
+           HEADER
+        =========================== */
+
+        header{
+            background:#111;
+            color:#fff;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:18px 8%;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo h2{
+            color:#ff9800;
+            font-size:28px;
+        }
+
+        .logo p{
+            color:#ddd;
+            font-size:14px;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:25px;
+        }
+
+        nav ul li a{
+            color:#fff;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        nav ul li a:hover{
+            color:#ff9800;
+        }
+
+        /* ===========================
+           HERO SECTION
+        =========================== */
+
+        .hero{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            padding:60px 8%;
+            background:#fff;
+        }
+
+        .hero-text{
+            flex:1;
+            min-width:300px;
+        }
+
+        .hero-text h1{
+            font-size:45px;
+            color:#111;
+            margin-bottom:20px;
+        }
+
+        .hero-text p{
+            font-size:18px;
+            margin-bottom:25px;
+        }
+
+        .hero-image{
+            flex:1;
+            display:flex;
+            justify-content:center;
+            margin-top:20px;
+        }
+
+        .placeholder{
+            width:380px;
+            height:300px;
+            border:3px dashed #999;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#ececec;
+            color:#666;
+            font-size:22px;
+        }
+
+        /* ===========================
+           BUTTONS
+        =========================== */
+
+        .btn{
+            display:inline-block;
+            background:#ff9800;
+            color:#fff;
+            padding:12px 24px;
+            border-radius:8px;
+            margin-right:10px;
+            margin-top:10px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            background:#e68900;
+        }
+
+        .call{
+            background:#111;
+        }
+
+        .call:hover{
+            background:#333;
+        }
+
+        /* ===========================
+           PRODUCTS
+        =========================== */
+
+        #products{
+            padding:70px 8%;
+        }
+
+        #products h2{
+            text-align:center;
+            font-size:36px;
+            margin-bottom:40px;
+        }
+
+        .product-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:#fff;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,.15);
+            transition:.3s;
+            text-align:center;
+            padding-bottom:20px;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+        }
+
+        .card .img{
+            height:200px;
+            background:#ddd;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:24px;
+            color:#666;
+        }
+
+        .card h3{
+            margin-top:20px;
+        }
+
+        .card p{
+            margin:10px 15px;
+        }
+
+        .card button{
+            background:#ff9800;
+            color:#fff;
+            border:none;
+            padding:12px 25px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .card button:hover{
+            background:#e68900;
+        }
+
+        /* ===========================
+           ABOUT SECTION
+        =========================== */
+
+        #about{
+            padding:70px 8%;
+            background:#ffffff;
+            text-align:center;
+        }
+
+        #about h2{
+            font-size:36px;
+            margin-bottom:20px;
+            color:#111;
+        }
+
+        #about p{
+            max-width:900px;
+            margin:auto;
+            font-size:18px;
+            color:#555;
+            line-height:1.8;
+        }
+
+        /* ===========================
+           CONTACT SECTION
+        =========================== */
+
+        #contact{
+            padding:70px 8%;
+            background:#f8f8f8;
+            text-align:center;
+        }
+
+        #contact h2{
+            font-size:36px;
+            margin-bottom:25px;
+        }
+
+        #contact p{
+            font-size:18px;
+            margin:12px 0;
+        }
+
+        /* ===========================
+           FOOTER
+        =========================== */
+
+        footer{
+            background:#111;
+            color:#fff;
+            text-align:center;
+            padding:20px;
+        }
+
+        footer p{
+            font-size:16px;
+        }
+
+        /* ===========================
+           ANIMATION
+        =========================== */
+
+        .card,
+        .btn,
+        .placeholder{
+            transition:0.3s ease;
+        }
+
+        .placeholder:hover{
+            transform:scale(1.03);
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+        }
+
+        /* ===========================
+           MOBILE RESPONSIVE
+        =========================== */
+
+        @media (max-width:768px){
+
+            header{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            nav ul{
+                flex-direction:column;
+                gap:15px;
+                margin-top:20px;
+            }
+
+            .hero{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .hero-text h1{
+                font-size:32px;
+            }
+
+            .placeholder{
+                width:100%;
+                max-width:320px;
+                height:220px;
+            }
+
+            .btn{
+                display:block;
+                margin:12px auto;
+                width:220px;
+            }
+
+            .product-grid{
+                grid-template-columns:1fr;
+            }
+
+            #products h2,
+            #about h2,
+            #contact h2{
+                font-size:28px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h2>🏪 SCRT</h2>
+            <p>Shree Chandaghi Ram Bhukaniya Traders</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Welcome to Shree Chandaghi Ram Bhukaniya Traders</h1>
+            <p>Quality products at affordable prices. Your trusted shop in Chanana.</p>
+            <a href="#products" class="btn">Shop Now</a>
+            <a href="#contact" class="btn call">Contact Us</a>
+        </div>
+        <div class="hero-image">
+            <div class="placeholder">📦 Shop Image</div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="card">
+                <div class="img">🌾</div>
+                <h3>Rice</h3>
+                <p>Premium quality rice for your family</p>
+                <button>Order Now</button>
+            </div>
+            <div class="card">
+                <div class="img">🌽</div>
+                <h3>Grains & Cereals</h3>
+                <p>Fresh grains and cereals daily</p>
+                <button>Order Now</button>
+            </div>
+            <div class="card">
+                <div class="img">🥄</div>
+                <h3>Spices</h3>
+                <p>Authentic and aromatic spices</p>
+                <button>Order Now</button>
+            </div>
+            <div class="card">
+                <div class="img">🥛</div>
+                <h3>Dairy Products</h3>
+                <p>Fresh dairy products delivered</p>
+                <button>Order Now</button>
+            </div>
+            <div class="card">
+                <div class="img">🍴</div>
+                <h3>Kitchen Items</h3>
+                <p>Essential kitchen utensils</p>
+                <button>Order Now</button>
+            </div>
+            <div class="card">
+                <div class="img">🛒</div>
+                <h3>General Store Items</h3>
+                <p>All your daily needs</p>
+                <button>Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Shree Chandaghi Ram Bhukaniya Traders is a trusted general store located in Chanana. 
+            For years, we have been serving our community with quality products at the best prices. 
+            We are committed to providing excellent customer service and ensuring customer satisfaction. 
+            Visit us today or order through WhatsApp for quick delivery!
+        </p>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p>📍 Location: Chanana</p>
+        <p>📞 WhatsApp: <a href="https://wa.me/918058640036" style="color:#ff9800; font-weight:bold;">+91 8058640036</a></p>
+        <p>💬 Order products directly through WhatsApp</p>
+        <a href="https://wa.me/918058640036" class="btn">Chat on WhatsApp</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Shree Chandaghi Ram Bhukaniya Traders. All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // ==============================
+        // Shree Chandaghi Ram Bhukaniya Traders
+        // script.js
+        // ==============================
+
+        // WhatsApp Number
+        const whatsappNumber = "918058640036";
+
+        // Order Buttons
+        const orderButtons = document.querySelectorAll(".card button");
+
+        orderButtons.forEach(button => {
+            button.addEventListener("click", function () {
+
+                let product =
+                this.parentElement.querySelector("h3").innerText;
+
+                let message =
+        `Hello,
+I want to order:
+
+Product: ${product}
+
+Shop:
+Shree Chandaghi Ram Bhukaniya Traders
+Chanana`;
+
+                let url =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+                window.open(url, "_blank");
+            });
+        });
+
+        // Welcome Message
+        window.onload = function(){
+
+            alert(
+            "🙏 Welcome to Shree Chandaghi Ram Bhukaniya Traders"
+            );
+
+        };
+
+        // Scroll To Top Button
+
+        let topButton = document.createElement("button");
+
+        topButton.innerHTML = "⬆";
+
+        topButton.id = "topBtn";
+
+        document.body.appendChild(topButton);
+
+        topButton.style.position = "fixed";
+        topButton.style.right = "20px";
+        topButton.style.bottom = "20px";
+        topButton.style.padding = "12px 16px";
+        topButton.style.fontSize = "20px";
+        topButton.style.border = "none";
+        topButton.style.borderRadius = "50%";
+        topButton.style.cursor = "pointer";
+        topButton.style.background = "#ff9800";
+        topButton.style.color = "#fff";
+        topButton.style.display = "none";
+
+        window.onscroll = function(){
+
+            if(document.documentElement.scrollTop > 300){
+
+                topButton.style.display = "block";
+
+            }else{
+
+                topButton.style.display = "none";
+
+            }
+
+        };
+
+        topButton.onclick = function(){
+
+            window.scrollTo({
+
+                top:0,
+
+                behavior:"smooth"
+
+            });
+
+        };
+    </script>
+
+</body>
+</html>
